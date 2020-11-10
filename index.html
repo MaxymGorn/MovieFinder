@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title> </title>
+    <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script type="text/javascript" src="https://ajax.aspnetcdn.com/ajax/knockout/knockout-3.4.0.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout.mapping/2.4.1/knockout.mapping.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap-theme.min.css" integrity="sha384-6pzBo3FDv/PJ8r2KRkGHifhEocL+1X2rVCTTkUfGk7/0pbek5mMa1upzvWbrUbOZ" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link rel="stylesheet" href="css/font-awesome-4.7.0/font-awesome.min.css" />
+    <link rel="stylesheet" href="css/main.css" />
+    <link rel='stylesheet' href='https://fonts.googleapis.com/icon?family=Material+Icons'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta.2/css/bootstrap.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prefixfree/1.0.7/prefixfree.min.js"></script>
+</head>
+
+<body>
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="basicModal" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <div class="modal-body">
+                        <div class="d-flex justify-content-between card-body align-items-center">
+
+                            <div class="w-50 center h-100">
+                                <img class="w-100  h-100 d-inline-block large-poster" data-bind="attr: { src: currentMovie.Poster}" class="img" alt="Movie Poster image">
+                            </div>
+
+                            <div class="center-container" style="width:50%;">
+                                <li class="list-group-item"><strong class="emp">Title:</strong> <span data-bind="text: currentMovie.Title"></span></li>
+                                <li class="list-group-item"><strong class="emp">Type:</strong> <span data-bind="text: currentMovie.Type"></span></li>
+                                <li class="list-group-item"><strong class="emp">Year:</strong> <span data-bind="text: currentMovie.Year"></span></li>
+                                <li class="list-group-item"><strong class="emp">Genre:</strong> <span data-bind="text: currentMovie.Genre"></span></li>
+                                <li class="list-group-item"><strong class="emp">Released:</strong> <span data-bind="text: currentMovie.Released"></span></li>
+                                <li class="list-group-item"><strong class="emp">Runtime:</strong> <span data-bind="text: currentMovie.Runtime"></span></li>
+                                <li class="list-group-item"><strong class="emp">Rated: </strong><span data-bind="text: currentMovie.Rated"></span></li>
+                                <li class="list-group-item"><strong class="emp">IMDB Rating:</strong> <span data-bind="text: currentMovie.imdbRating"></span></li>
+                                <li class="list-group-item"><strong class="emp">IMDB Votes:</strong> <span data-bind="text: currentMovie.imdbVotes"></span></li>
+                                <li class="list-group-item"><strong class="emp">Language:</strong> <span data-bind="text: currentMovie.Language"></span></li>
+                                <li class="list-group-item"><strong class="emp">Country:</strong> <span data-bind="text: currentMovie.Country"></span></li>
+                                <li class="list-group-item"><strong class="emp">Writer:</strong> <span data-bind="text: currentMovie.Writer"></span></li>
+                                <li class="list-group-item"><strong class="emp">Director:</strong> <span data-bind="text: currentMovie.Director"></span></li>
+                                <li class="list-group-item"><strong class="emp">Actors: </strong><span data-bind="text: currentMovie.Actors"></span></li>
+                                <li class="list-group-item"><strong class="emp">Plot:</strong> <span data-bind="text: currentMovie.Plot"></span></li>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mainContainer">
+        <div class="mainHeading">
+            <div class="row row-centered">
+                <div class="col-md-12 col-lg-12">
+                    <div class="jumbotron">
+                        <div class="centered">
+                            <h1>Movie Finder</h1>
+                            <p>The quest to find you the perfect movie for tonight</p>
+                            <p><a class="btn btn-primary btn-lg" href="#" id="go" role="button">Embark on your quest</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div id="step2" class="row-centered searchRow">
+            <div class="col-12 col-sm-12 col-md-10 col-md-8 col-lg-8 col-xl-8  col-centered">
+                <h3>Begin your movie quest:</h3>
+                <div class="input-group">
+                    <input type="text" data-bind="value: searchTerm" placeholder="Enter your search movie..." width="50%" class="form-control searchForm " style="font-size:23px;" aria-label="...">
+                    <div class="input-group-btn">
+                        <select data-bind="options: typeOptions , value: selectedType, optionsAfterRender: optionsAfterRender" class="form-control form-control-lg" data-style="btn-warning"></select>
+                        <button type="button" data-bind="click: searchForMovies" class="btn btn-primary">Search</button>
+                        <button type="button" data-bind="click: clear" class="btn btn-danger">Clear</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row" data-bind="visible: error">
+            <h3 data-bind="text: errorMessage"></h3>
+        </div>
+        <div class="row results" >
+            <main role="main" class="col-md-9 ml-sm-auto col-lg-10 px-4 movie_list" >
+                <div  class="">
+                    <div data-bind="visible: movies().length > 0, foreach: movies"  class="row">
+                        <div class="card-view">
+                            <div class="card-header" data-bind="style: { 'background-image': Poster }" >             
+                                <div class="card-header-icon">
+                                    <a data-bind="attr: { href: imdbID }" href="#">
+                                        <i class="material-icons header-icon">play_arrow</i>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="card-movie-content">
+                                <div class="card-movie-content-head">
+                                    <a data-toggle="modal" href="#" data-bind="click: $root.viewMoreInfo" data-target="#myModal">
+                                        <h3 class="card-movie-title" data-bind="text: Title"></h3>
+                                    </a>
+                                </div>
+                                <div class="card-movie-info">
+                                    <div class="movie-running-time">
+                                        <label>Type</label>
+                                        <span data-bind="text: Type"></span>
+                                    </div>
+                                    <div class="movie-running-time">
+                                        <label>Year</label>
+                                        <span data-bind="text: Year"></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </main>
+        </div>
+        <div class="text-center" data-bind="visible: loadMore">
+            <button type="button" data-bind="click: pushMovies" class="btn btn-lg btn-success more-btn">Load more...</button>
+        </div>
+    </div>
+
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <script src='https://unpkg.com/popper.js'></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0-beta/js/bootstrap.min.js'></script>
+
+    <script src="js/app.js"></script>
+    <script src="js/pageFlow.js"></script>
+</body>
+
+</html>

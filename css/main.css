@@ -1,0 +1,358 @@
+
+.row-centered {
+    text-align: center;
+}
+
+.col-centered {
+    display: inline-block;
+    float: none;
+    text-align: left;
+    margin-right: -4px;
+}
+
+.centered {
+    text-align: center;
+    display: inline-block;
+    float: none;
+    margin: 0 auto;
+}
+
+.searchRow {
+    padding-bottom: 50px;
+}
+
+.alignLeft {
+    margin-right: 70%;
+}
+
+.results {
+    color: black;
+    font-weight: bolder;
+}
+.panel-heading{
+    background-color: beige;
+}
+.noneFound {
+    color: black;
+    font-weight: bold;
+}
+
+.resultContainer {
+    width: 80%;
+    margin: 0 auto;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 20px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+}
+
+.mainContainer {
+    width: 85%;
+    margin: 0 auto;
+}
+
+.searchRow {
+    padding-bottom: 80px
+}
+
+img{
+    max-height: 300px;
+    max-width: 300px; 
+    margin: auto auto;
+    padding-bottom: 30px;
+}
+.center{
+    margin: 0 auto;
+    text-align: center;
+}
+.panel{
+ height: 650px;   
+}
+
+.searchForm{
+   width: 50%;
+}
+.emp{
+    color: darkcyan;
+}
+
+#go{
+    margin-top: 17px;
+}
+
+.jumbotron{
+height: 300px;    
+}
+.mainHeading{
+ display:none;   
+}
+.select-type{  
+}
+.more-btn{
+    margin-bottom: 140px;
+    width: 20%;
+    height: 50%;
+}
+.large-poster{
+    max-height: 100%;
+    max-width: 100%;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: auto;
+}
+
+body {
+    height: 100%;
+    width: 100%;
+    background: #e9e9e9;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    color: #010b26;
+}
+ 
+* {
+    -webkit-transition: 300ms;
+    transition: 300ms;
+}
+ 
+.intro {
+    text-align: center;
+}
+ 
+ul {
+    list-style-type: none;
+}
+ 
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+    font-weight: 400;
+}
+ 
+a {
+    text-decoration: none;
+    color: inherit;
+}
+ 
+a:hover {
+    color: #6ABCEA;
+}
+ 
+.container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    -webkit-box-pack: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+}
+ 
+.navbar-dark {
+    padding: 15px !important;
+    background: #13191d !important;
+}
+ 
+.sidebar {
+    line-height: 26px;
+    padding-top: 50px;
+}
+ 
+.sidebar ul {
+    margin: 30px 0px;
+}
+ 
+.sidebar .nav-link {
+    display: block;
+    text-align: center;
+}
+ 
+.sidebar .nav-link i {
+    display: block;
+    text-align: center;
+}
+ 
+.sidebar .nav-link.active {
+    color: #03A9F4;
+}
+ 
+.movie_list {
+    margin-top: 5rem;
+    padding-left: 4rem !important;
+}
+ 
+.card-view {
+    background: #ffffff;
+    box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 315px;
+    margin: 2em;
+    border-radius: 10px;
+    display: inline-block;
+}
+ 
+.card-header {
+    padding: 0;
+    margin: 0;
+    height: 367px;
+    width: 100%;
+    display: block;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+ 
+.avengerEndgame {
+    background: url("img/avengers.jpg");
+    background-size: cover;
+}
+ 
+.hobbsShaw {
+    background: url("img/hobbs-and-shaw.jpg");
+    background-size: cover;
+}
+ 
+.Johnwick {
+    background: url("img/john-wick-3.jpg");
+    background-size: cover;
+    background-position: 100% 100%;
+}
+ 
+.deadPool {
+    background: url("img/deadpool-2.jpg");
+    background-size: cover;
+}
+ 
+.theLionking {
+    background: url("img/lion_king.jpg");
+    background-size: cover;
+}
+ 
+.madMax {
+    background: url("img/mad_max.jpg");
+    background-size: cover;
+}
+ 
+.aquaMan {
+    background: url("img/aqua_man.jpg");
+    background-size: cover;
+}
+ 
+.missionImpossible {
+    background: url("img/mission_Impossible.jpg");
+    background-size: cover;
+}
+ 
+.card-header-icon {
+    position: relative;
+}
+ 
+.header-icon {
+    width: 100%;
+    height: 367px;
+    line-height: 367px;
+    text-align: center;
+    vertical-align: middle;
+    margin: 0 auto;
+    color: #ffffff;
+    font-size: 54px;
+    text-shadow: 0px 0px 20px #6abcea, 0px 5px 20px #6ABCEA;
+    opacity: .85;
+}
+ 
+.header-icon:hover {
+    background: rgba(0, 0, 0, 0.15);
+    font-size: 74px;
+    text-shadow: 0px 0px 20px #6abcea, 0px 5px 30px #6ABCEA;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    opacity: 1;
+}
+ 
+.card-view:hover {
+    -webkit-transform: scale(1.03);
+    transform: scale(1.03);
+    box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.08);
+}
+ 
+.card-movie-content {
+    padding: 18px 18px 24px 18px;
+    margin: 0;
+}
+ 
+.card-movie-content-head,
+.card-movie-info {
+    display: table;
+    width: 100%;
+}
+ 
+.card-movie-title {
+    font-size: 22px;
+    margin: 0;
+    display: table-cell;
+}
+ 
+.ratings {
+    width: 50px;
+    height: 15px;
+    background-size: contain;
+    display: table-cell;
+    text-align: right;
+    position: relative;
+    margin-top: 5px;
+    font-weight: 600;
+}
+ 
+.ratings span {
+    color: #2196F3;
+}
+ 
+.card-movie-info {
+    margin-top: 1em;
+}
+ 
+.movie-running-time {
+    display: table-cell;
+    text-transform: uppercase;
+    text-align: center;
+}
+ 
+.movie-running-time:first-of-type {
+    text-align: left;
+}
+ 
+.movie-running-time:last-of-type {
+    text-align: right;
+}
+ 
+.movie-running-time label {
+    display: block;
+    color: rgba(0, 0, 0, 0.5);
+    margin-bottom: .5em;
+    font-size: 9px;
+}
+ 
+.movie-running-time span {
+    font-weight: 700;
+    font-size: 11px;
+}
+ 
+@media Running time and (max-width: 500px) {
+    .card-view {
+        width: 95%;
+        max-width: 95%;
+        margin: 1em;
+        display: block;
+    }
+    .container {
+        padding: 0;
+        margin: 0;
+    }
+}
